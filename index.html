@@ -4,45 +4,248 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>عيشها صح | محمد أبو العُلا</title>
-<meta name="description" content="عيشها صح — القرآن والسنّة بطريقة عملية لحياتك. فيديو قصير كل يوم الساعة ٨ بالليل بتوقيت القاهرة.">
+<meta name="description" content="عيشها صح — مقاطع قصيرة يومية تجعل القرآن والسنّة منهجًا عمليًا لحياتك. Eishha Sah — daily short videos that turn the Quran and Sunnah into a practical way of life.">
+<meta property="og:title" content="عيشها صح | Eishha Sah">
+<meta property="og:description" content="القرآن والسنّة… منهجٌ عمليٌّ لحياتك. The Quran and Sunnah, as a practical way of life.">
+<meta property="og:image" content="https://abualolamohamed.github.io/person.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Noto+Naskh+Arabic:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#0e1420; --card:#161e2e; --text:#f3f5f8; --muted:#a9b3c4; --accent:#4FC3F7; --line:#26324a; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font-family:'Cairo',system-ui,sans-serif; line-height:1.7; }
-  main { max-width:640px; margin:0 auto; padding:48px 16px 32px; text-align:center; }
-  img.photo { width:132px; height:132px; border-radius:50%; object-fit:cover; border:3px solid var(--accent); }
-  h1 { font-size:2.2rem; margin:16px 0 0; font-weight:800; }
-  .name { color:var(--muted); margin:0 0 20px; font-size:1.05rem; }
-  .tag { font-size:1.15rem; margin:0 0 8px; }
-  .time { color:var(--accent); font-weight:600; margin:0 0 32px; }
-  .links { display:grid; gap:12px; }
-  .links a { display:block; padding:14px 18px; background:var(--card); border:1px solid var(--line); border-radius:14px;
-             color:var(--text); text-decoration:none; font-weight:600; font-size:1.05rem; }
-  .links a:hover { border-color:var(--accent); }
-  footer { margin-top:40px; color:var(--muted); font-size:.9rem; }
-  footer a { color:var(--muted); }
+  :root{
+    --bg:#0a1324; --bg2:#0e1a30; --card:#122241; --line:#1f3560;
+    --text:#ffffff; --muted:#b4c0d6; --accent:#4FC3F7; --accent2:#4FC3F7;
+    --head:'Noto Naskh Arabic','Geeza Pro','Cairo',serif;
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--text);font-family:'Cairo',system-ui,sans-serif;line-height:1.75}
+  html[lang=en] body{font-family:'Inter','Cairo',system-ui,sans-serif;line-height:1.65}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+
+  /* language visibility */
+  html[lang=ar] [lang=en]{display:none!important}
+  html[lang=en] [lang=ar]{display:none!important}
+
+  header{position:sticky;top:0;z-index:10;background:rgba(10,19,36,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+  .brand{font-weight:800;font-size:1.25rem;text-decoration:none;white-space:nowrap}
+  .brand b{color:var(--accent)}
+  nav.menu{display:flex;gap:22px}
+  nav.menu a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem}
+  nav.menu a:hover{color:var(--text)}
+  .lang{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:999px;padding:6px 14px;font:inherit;font-weight:700;cursor:pointer}
+  @media (max-width:720px){nav.menu{display:none}}
+
+  .hero{position:relative;min-height:560px;display:flex;align-items:center;overflow:hidden;
+        background:radial-gradient(700px 420px at 20% 50%,rgba(79,195,247,.10),transparent 70%),linear-gradient(90deg,#0a1324 0%,#0f1d36 100%)}
+  .hero .person{position:absolute;top:0;right:0;height:100%;width:56%;
+        background:url(person.jpg) left center/cover no-repeat;
+        -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 30%);mask-image:linear-gradient(90deg,transparent 0%,#000 30%)}
+  .hero .wrap{position:relative;width:100%}
+  .hero .text{max-width:500px;text-align:center;margin-left:0;margin-right:auto}
+  h1{font-family:var(--head);font-size:clamp(3rem,8vw,5.2rem);line-height:1.1;margin:0 0 10px;font-weight:700;
+     text-shadow:0 4px 14px rgba(0,0,0,.55)}
+  html[lang=en] h1{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(2.6rem,7vw,4.4rem)}
+  .slogan{font-family:var(--head);color:var(--accent);font-size:clamp(1.4rem,3.4vw,2rem);margin:0 0 14px;text-shadow:0 3px 10px rgba(0,0,0,.5)}
+  html[lang=en] .slogan{font-family:'Inter',sans-serif;font-weight:800}
+  .lead{font-size:1.12rem;color:#e6ebf4;margin:0 auto 6px}
+  .eyebrow{color:var(--muted);margin:0 0 26px;font-weight:600}
+  .btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:700}
+  .btn.primary{background:var(--accent);color:#06202c}
+  .btn.ghost{border:1px solid rgba(255,255,255,.35);background:rgba(10,19,36,.45)}
+  @media (max-width:820px){
+    .hero{min-height:auto;display:block;padding:0 0 40px}
+    .hero .person{position:relative;width:100%;height:320px;background-position:60% center;
+        -webkit-mask-image:linear-gradient(0deg,transparent 0%,#000 40%);mask-image:linear-gradient(0deg,transparent 0%,#000 40%)}
+    .hero .text{max-width:none;margin:-30px auto 0}
+  }
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  section.alt{background:var(--bg2)}
+  h2{font-family:var(--head);font-size:clamp(1.8rem,3.8vw,2.4rem);margin:0 0 10px}
+  html[lang=en] h2{font-family:'Inter',sans-serif}
+  h2::after{content:"";display:block;width:56px;height:4px;border-radius:4px;background:var(--accent);margin-top:10px}
+  .sub{color:var(--muted);margin:0 0 32px;max-width:680px}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .card h3{margin:0 0 6px;font-size:1.1rem}
+  .card p{margin:0;color:var(--muted)}
+  .icon{font-size:1.6rem;margin-bottom:8px;display:block}
+
+  .steps{counter-reset:s;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .steps .card::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(79,195,247,.15);color:var(--accent);font-weight:800;margin-bottom:10px}
+
+  .platforms a{display:flex;align-items:center;justify-content:space-between;text-decoration:none;font-weight:700}
+  .platforms a span.h{color:var(--muted);font-weight:400;font-size:.9rem;direction:ltr}
+  .platforms a:hover{border-color:var(--accent)}
+
+  .contact .card a{text-decoration:none;font-weight:700;color:var(--accent);direction:ltr;display:inline-block}
+  .todo{border:1px dashed var(--accent);color:var(--accent);border-radius:10px;padding:2px 10px;font-size:.85rem;display:inline-block}
+
+  .eps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));max-width:820px}
+  .ep{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .2s,border-color .2s}
+  .ep:hover{transform:translateY(-3px);border-color:var(--accent)}
+  .ep img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}
+  .ep div{padding:14px 18px}
+  .ep h3{margin:0 0 2px;font-size:1.05rem}
+  .ep p{margin:0;color:var(--muted);font-size:.9rem}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+  .btn.wa{background:#1DA851;color:#fff}
+  .num{direction:ltr;unicode-bidi:isolate;font-weight:700;font-size:1.15rem;color:var(--text)}
+  .fab{position:fixed;bottom:20px;left:20px;z-index:20;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+  .fab svg{width:30px;height:30px;fill:#fff}
+  footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+  footer a{text-decoration:none}
+  footer a:hover{color:var(--text)}
 </style>
 </head>
 <body>
-<main>
-  <img class="photo" src="photo.jpg" alt="محمد أبو العُلا">
-  <h1>عيشها صح</h1>
-  <p class="name">محمد أبو العُلا · لايف كوتش</p>
-  <p class="tag">القرآن والسنّة… بطريقة عملية لحياتك 🤍</p>
-  <p class="time">فيديو قصير كل يوم الساعة ٨ بالليل بتوقيت القاهرة</p>
-  <nav class="links">
-    <a href="https://www.youtube.com/@Eishhasah0">▶️ يوتيوب</a>
-    <a href="https://www.instagram.com/eishhasah">📸 إنستجرام</a>
-    <a href="https://www.tiktok.com/@eishhasah">🎵 تيك توك</a>
-    <a href="https://www.facebook.com/eishhasah">📘 فيسبوك</a>
-  </nav>
-  <footer>
-    <p><a href="privacy.html">سياسة الخصوصية · Privacy Policy</a></p>
-    <p>© 2026 عيشها صح</p>
-  </footer>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top"><span lang="ar">عيشها <b>صح</b></span><span lang="en">Eishha <b>Sah</b></span></a>
+    <nav class="menu">
+      <a href="#about"><span lang="ar">نبذة</span><span lang="en">About</span></a>
+      <a href="#topics"><span lang="ar">المحاور</span><span lang="en">Topics</span></a>
+      <a href="#episodes"><span lang="ar">الحلقات</span><span lang="en">Episodes</span></a>
+      <a href="#watch"><span lang="ar">تابعنا</span><span lang="en">Watch</span></a>
+      <a href="#contact"><span lang="ar">تواصل</span><span lang="en">Contact</span></a>
+    </nav>
+    <button class="lang" id="langBtn" type="button" aria-label="Switch language"><span lang="ar">English</span><span lang="en">العربية</span></button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="person" role="img" aria-label="Mohamed Abu Al-Ola — محمد أبو العُلا"></div>
+    <div class="wrap">
+      <div class="text">
+        <h1><span lang="ar">عيشها صح</span><span lang="en">Eishha <span style="color:var(--accent)">Sah</span></span></h1>
+        <p class="slogan"><span lang="ar">إيمانٌ قويّ + جسمٌ قويّ</span><span lang="en">Strong faith + strong body</span></p>
+        <p class="lead"><span lang="ar">القرآن والسنّة… أسلوب حياة</span><span lang="en">The Quran and the Sunnah… a way of life</span></p>
+        <p class="eyebrow"><span lang="ar">محمد أبو العُلا · مدرّب حياة</span><span lang="en">Mohamed Abu Al-Ola · Life Coach</span></p>
+        <div class="btns">
+          <a class="btn primary" href="https://www.youtube.com/@Eishhasah0"><span lang="ar">شاهد الحلقات</span><span lang="en">Watch the episodes</span></a>
+          <a class="btn ghost" href="#contact"><span lang="ar">تواصل معي</span><span lang="en">Get in touch</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2><span lang="ar">نبذة</span><span lang="en">About</span></h2>
+      <p class="sub">
+        <span lang="ar">«عيشها صح» مشروعٌ يقدّمه محمد أبو العُلا، يجمع بين الإيمان والعمل: أن تفهم ما قاله الله ورسوله ﷺ، ثم تحوّله إلى عادةٍ في بيتك وعملك وصحتك وعلاقاتك. لا مواعظ طويلة، بل فكرةٌ واضحة في أقل من دقيقة، وخطوةٌ عملية تطبّقها في يومك.</span>
+        <span lang="en">“Live It Right” (Eishha Sah) is a project by Mohamed Abu Al-Ola that brings faith and action together: understand what Allah and His Messenger ﷺ said, then turn it into a habit at home, at work, in your health and in your relationships. No long lectures — one clear idea in under a minute, and one practical step for your day.</span>
+      </p>
+      <div class="grid">
+        <div class="card"><span class="icon">📖</span>
+          <h3><span lang="ar">مرجعيةٌ موثّقة</span><span lang="en">Verified sources</span></h3>
+          <p><span lang="ar">كل حلقة مبنيّة على آيةٍ أو حديثٍ صحيح، مع ذكر المصدر.</span><span lang="en">Every episode is built on a verse or an authentic hadith, with its reference.</span></p></div>
+        <div class="card"><span class="icon">⏱️</span>
+          <h3><span lang="ar">أقل من دقيقة</span><span lang="en">Under a minute</span></h3>
+          <p><span lang="ar">فكرةٌ واحدة مركّزة تناسب يومك المزدحم.</span><span lang="en">One focused idea that fits a busy day.</span></p></div>
+        <div class="card"><span class="icon">🎯</span>
+          <h3><span lang="ar">خطوةٌ عملية</span><span lang="en">One practical step</span></h3>
+          <p><span lang="ar">تنتهي كل حلقة بشيءٍ تفعله اليوم، لا غدًا.</span><span lang="en">Each episode ends with something to do today, not tomorrow.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="topics" class="alt">
+    <div class="wrap">
+      <h2><span lang="ar">المحاور</span><span lang="en">Topics</span></h2>
+      <p class="sub"><span lang="ar">موضوعاتٌ من صميم الحياة اليومية، نتناولها بنور القرآن والسنّة.</span><span lang="en">Everyday life, seen in the light of the Quran and the Sunnah.</span></p>
+      <div class="grid">
+        <div class="card"><span class="icon">🤍</span><h3><span lang="ar">الإيمان والثقة بالله</span><span lang="en">Faith & trust in Allah</span></h3><p><span lang="ar">حسن الظن، والتوكّل، والرضا بالقضاء والقدر.</span><span lang="en">Good opinion of Allah, reliance on Him, and contentment with His decree.</span></p></div>
+        <div class="card"><span class="icon">💪</span><h3><span lang="ar">الانضباط والعادات</span><span lang="en">Discipline & habits</span></h3><p><span lang="ar">الاستمرار، ومقاومة التسويف، وبناء النفس والجسد؛ فالمؤمن القوي خيرٌ وأحبّ إلى الله.</span><span lang="en">Consistency, beating procrastination, and building body and soul — the strong believer is better and more beloved to Allah.</span></p></div>
+        <div class="card"><span class="icon">👨‍👩‍👧</span><h3><span lang="ar">الأسرة والعلاقات</span><span lang="en">Family & relationships</span></h3><p><span lang="ar">برّ الوالدين، وتربية الأبناء، والكلمة الطيبة.</span><span lang="en">Honouring parents, raising children, and the good word.</span></p></div>
+        <div class="card"><span class="icon">🌿</span><h3><span lang="ar">القناعة وسلامة القلب</span><span lang="en">Contentment & a clean heart</span></h3><p><span lang="ar">التحرّر من المقارنة والحسد، والعطاء بيقين.</span><span lang="en">Freedom from comparison and envy, and giving with certainty.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="episodes" class="alt">
+    <div class="wrap">
+      <h2><span lang="ar">الحلقات الأكثر مشاهدة</span><span lang="en">Most-watched episodes</span></h2>
+      <p class="sub"><span lang="ar">ابدأ من هنا: الحلقات التي لاقت أكبر تفاعل.</span><span lang="en">Start here: the episodes viewers engaged with most.</span></p>
+      <div class="eps">
+        <a class="ep" href="https://www.youtube.com/shorts/5hbil0MABcs"><img src="ep/ep10.jpg" alt="" loading="lazy"><div><h3><span lang="ar">حسن الظن بالله</span><span lang="en">Thinking well of Allah</span></h3><p><span lang="ar">هل الرزق بالشطارة وحدها؟</span><span lang="en">Is provision only about being clever?</span></p></div></a>
+        <a class="ep" href="https://www.youtube.com/shorts/NbQg6i6ot6s"><img src="ep/ep03.jpg" alt="" loading="lazy"><div><h3><span lang="ar">الحسد</span><span lang="en">Envy</span></h3><p><span lang="ar">لا تعِش خائفًا من أعين الناس.</span><span lang="en">Don’t live in fear of people’s eyes.</span></p></div></a>
+        <a class="ep" href="https://www.youtube.com/shorts/YMpZa1XhuXw"><img src="ep/ep04.jpg" alt="" loading="lazy"><div><h3><span lang="ar">المؤمن القوي</span><span lang="en">The strong believer</span></h3><p><span lang="ar">صلاةٌ وصيام… وجسدٌ يُعينك عليهما.</span><span lang="en">Prayer and fasting — and a body that helps you keep them.</span></p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2><span lang="ar">كيف تستفيد؟</span><span lang="en">How it works</span></h2>
+      <div class="steps">
+        <div class="card"><h3><span lang="ar">حلقةٌ جديدة كل يوم</span><span lang="en">A new episode every day</span></h3><p><span lang="ar">الساعة الثامنة مساءً بتوقيت القاهرة، على جميع المنصات.</span><span lang="en">At 8:00 PM Cairo time, on every platform.</span></p></div>
+        <div class="card"><h3><span lang="ar">طبّق الخطوة</span><span lang="en">Take the step</span></h3><p><span lang="ar">نفّذ الخطوة العملية في يومك، ولو كانت صغيرة.</span><span lang="en">Do the practical step in your day, however small.</span></p></div>
+        <div class="card"><h3><span lang="ar">الخلاصة الأسبوعية</span><span lang="en">The weekly recap</span></h3><p><span lang="ar">كل سبعة أيام حلقةٌ تجمع دروس الأسبوع الستة.</span><span lang="en">Every seventh day, one episode brings the week’s six lessons together.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="watch">
+    <div class="wrap">
+      <h2><span lang="ar">تابعنا</span><span lang="en">Watch & follow</span></h2>
+      <p class="sub"><span lang="ar">الحلقات نفسها على كل المنصات؛ اختر الأقرب إليك.</span><span lang="en">The same episodes everywhere — pick the one you use most.</span></p>
+      <div class="grid platforms">
+        <a class="card" href="https://www.youtube.com/@Eishhasah0">▶️ <span lang="ar">يوتيوب</span><span lang="en">YouTube</span> <span class="h">@Eishhasah0</span></a>
+        <a class="card" href="https://www.instagram.com/eishhasah">📸 <span lang="ar">إنستغرام</span><span lang="en">Instagram</span> <span class="h">@eishhasah</span></a>
+        <a class="card" href="https://www.tiktok.com/@eishhasah">🎵 <span lang="ar">تيك توك</span><span lang="en">TikTok</span> <span class="h">@eishhasah</span></a>
+        <a class="card" href="https://www.facebook.com/eishhasah">📘 <span lang="ar">فيسبوك</span><span lang="en">Facebook</span> <span class="h">@eishhasah</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2><span lang="ar">تواصل معي</span><span lang="en">Get in touch</span></h2>
+      <p class="sub"><span lang="ar">للاستفسارات والتعاون والمحاضرات وجلسات التدريب.</span><span lang="en">For questions, collaborations, talks and coaching sessions.</span></p>
+      <div class="grid">
+        <div class="card"><span class="icon">📞</span><h3><span lang="ar">الهاتف / واتساب</span><span lang="en">Phone / WhatsApp</span></h3>
+          <p class="num">+971 56 642 2500</p>
+          <div class="cta-row">
+            <a class="btn wa" href="https://wa.me/971566422500?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%AA%D9%88%D8%A7%D8%B5%D9%84%D8%AA%20%D9%85%D8%B9%D9%83%20%D9%85%D9%86%20%D9%85%D9%88%D9%82%D8%B9%20%C2%AB%D8%B9%D9%8A%D8%B4%D9%87%D8%A7%20%D8%B5%D8%AD%C2%BB"><span lang="ar">راسلني على واتساب</span><span lang="en">Message on WhatsApp</span></a>
+            <a class="btn ghost" href="tel:+971566422500"><span lang="ar">اتصال</span><span lang="en">Call</span></a>
+          </div></div>
+        <div class="card"><span class="icon">💬</span><h3><span lang="ar">رسالة على إنستغرام</span><span lang="en">Instagram DM</span></h3>
+          <p><a href="https://www.instagram.com/eishhasah">@eishhasah</a></p></div>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span><span lang="ar">© ٢٠٢٦ عيشها صح — محمد أبو العُلا</span><span lang="en">© 2026 Eishha Sah — Mohamed Abu Al-Ola</span></span>
+    <a href="privacy.html"><span lang="ar">سياسة الخصوصية</span><span lang="en">Privacy Policy</span></a>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/971566422500" aria-label="WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.5.7 4.8 2 6.8L3 29l6.8-2.2c1.9 1 4 1.6 6.2 1.6 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23c-2 0-3.9-.6-5.5-1.6l-.4-.2-4 1.3 1.3-3.9-.3-.4c-1.1-1.7-1.7-3.6-1.7-5.6C5.4 9.8 10.2 5.2 16 5.2s10.6 4.6 10.6 10.4S21.8 26 16 26zm5.8-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.7-.5z"/></svg></a>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Mohamed Abu Al-Ola","alternateName":"محمد أبو العُلا","jobTitle":"Life Coach","url":"https://abualolamohamed.github.io/","telephone":"+971566422500",
+ "sameAs":["https://www.youtube.com/@Eishhasah0","https://www.instagram.com/eishhasah","https://www.tiktok.com/@eishhasah","https://www.facebook.com/eishhasah"]}
+</script>
+<script>
+  (function(){
+    var root=document.documentElement, btn=document.getElementById('langBtn');
+    function set(l){root.lang=l; root.dir=(l==='ar'?'rtl':'ltr'); document.title=(l==='ar'?'عيشها صح | محمد أبو العُلا':'Eishha Sah | Mohamed Abu Al-Ola'); try{localStorage.setItem('lang',l)}catch(e){}}
+    var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+    var q=new URLSearchParams(location.search).get('lang');
+    set(q==='en'||q==='ar'?q:(saved||'ar'));
+    btn.addEventListener('click',function(){set(root.lang==='ar'?'en':'ar')});
+  })();
+</script>
 </body>
 </html>
