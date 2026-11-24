@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src https://gc.zgo.at 'sha256-RknkA2VtD3J4+hmz49LqVBqt4dr8OhmtDO1b0WBAswc='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://eishhasah.goatcounter.com; connect-src https://eishhasah.goatcounter.com; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src https://gc.zgo.at 'sha256-xm9+nFcGMXLhKEIGAadLbNjuMCEqM/pmWj1xJkveulk='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://eishhasah.goatcounter.com; connect-src 'self' https://eishhasah.goatcounter.com; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>عيشها صح | محمد أبو العُلا</title>
@@ -125,6 +125,84 @@
   footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
   footer a{text-decoration:none}
   footer a:hover{color:var(--text)}
+
+  /* --- 2026-11-24 redesign --- */
+  .kicker{display:inline-flex;align-items:center;gap:10px;color:var(--accent);font-weight:700;letter-spacing:.04em;font-size:.9rem;margin:0 0 14px}
+  .kicker::before{content:"";width:34px;height:1px;background:var(--accent)}
+  .reveal{opacity:0;transform:translateY(18px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+  .d1{animation-delay:.12s}.d2{animation-delay:.3s}.d3{animation-delay:.48s}.d4{animation-delay:.66s}.d5{animation-delay:.84s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}}
+  .feat{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12)}
+  .feat span{display:flex;align-items:center;gap:8px;color:#dfe6f2;font-weight:600;font-size:.95rem}
+  .feat svg{width:22px;height:22px;color:var(--accent)}
+  /* numbers */
+  .stats{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
+  @media (max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{border:1px solid var(--line);border-radius:var(--radius);padding:22px 16px;text-align:center;background:linear-gradient(180deg,rgba(79,195,247,.06),transparent)}
+  .stat b{display:block;font-family:'Inter',sans-serif;font-size:clamp(2rem,5vw,2.8rem);font-weight:800;color:var(--accent);direction:ltr;line-height:1.1}
+  .stat span{color:var(--muted);font-weight:600;font-size:.95rem}
+  /* topics accordion */
+  .acc{border-top:1px solid var(--line)}
+  .acc details{border-bottom:1px solid var(--line)}
+  .acc summary{list-style:none;display:flex;align-items:center;gap:18px;padding:20px 4px;cursor:pointer}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc .no{font-family:'Inter',sans-serif;color:var(--accent);font-weight:600;min-width:2.2em}
+  .acc .tt{font-family:var(--head);font-size:clamp(1.25rem,2.8vw,1.6rem);font-weight:700;flex:1}
+  html[lang=en] .acc .tt{font-family:'Inter',sans-serif}
+  .acc .pm{width:28px;height:28px;position:relative;flex:none}
+  .acc .pm::before,.acc .pm::after{content:"";position:absolute;inset:13px 3px auto;height:2px;background:var(--text);transition:transform .3s}
+  .acc .pm::after{transform:rotate(90deg)}
+  .acc details[open] .pm::after{transform:rotate(0)}
+  .acc .body{padding:0 4px 22px;color:var(--muted)}
+  .acc .body p{margin:0 0 12px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips .chip{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.88rem;color:#dfe6f2;text-decoration:none;transition:border-color .2s,color .2s}
+  .chips a.chip[href]:hover{border-color:var(--accent);color:var(--accent)}
+  .chips a.chip[href]::after{content:" ↗";color:var(--accent);font-size:.8em}
+  .chips a.chip.soon{opacity:.55;cursor:default}
+  .chips a.chip.soon::after{content:""}
+  /* from -> to */
+  .ft{display:grid;gap:0;border-top:1px solid var(--line)}
+  .ft div{display:grid;grid-template-columns:2.4em 1fr auto 1fr;align-items:center;gap:14px;padding:18px 4px;border-bottom:1px solid var(--line)}
+  .ft .no{font-family:'Inter',sans-serif;color:var(--accent);font-weight:600}
+  .ft .from{color:var(--muted);font-weight:600}
+  .ft .arr{color:var(--accent);font-weight:800}
+  html[lang=ar] .ft .arr{transform:scaleX(-1);display:inline-block}
+  .ft .to{font-family:var(--head);font-size:1.3rem;font-weight:700}
+  html[lang=en] .ft .to{font-family:'Inter',sans-serif;font-size:1.1rem}
+  /* episode carousel */
+  .eps{display:flex!important;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;max-width:none!important;padding-bottom:4px}
+  .eps::-webkit-scrollbar{display:none}
+  .eps .ep{flex:0 0 clamp(200px,26%,240px);scroll-snap-align:start}
+  .car-nav{display:flex;align-items:center;gap:12px;margin-top:18px}
+  .car-nav .track{flex:1;height:2px;background:var(--line);position:relative;border-radius:2px;overflow:hidden}
+  .car-nav .track i{position:absolute;inset:0 auto 0 0;width:30%;background:var(--accent);border-radius:2px}
+  html[lang=ar] .car-nav .track i{inset:0 0 0 auto}
+  .car-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--text);font-size:1.2rem;cursor:pointer}
+  .car-nav button:hover{border-color:var(--accent);color:var(--accent)}
+  /* timeline */
+  .tl{position:relative;padding-inline-start:28px}
+  .tl::before{content:"";position:absolute;inset-block:6px;inset-inline-start:7px;width:2px;background:var(--line)}
+  .tl div{position:relative;padding:0 0 26px}
+  .tl div::before{content:"";position:absolute;inset-inline-start:-27px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+  .tl div.now::before{background:var(--accent)}
+  .tl time{color:var(--accent);font-weight:700;font-size:.9rem;direction:ltr;unicode-bidi:isolate}
+  .tl h3{margin:2px 0 2px;font-size:1.1rem}
+  .tl p{margin:0;color:var(--muted)}
+  /* floating pill (desktop) + bottom bar (mobile) */
+  .pill{position:fixed;bottom:26px;left:92px;z-index:20;display:flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(10,19,36,.85);backdrop-filter:blur(8px);text-decoration:none;font-weight:700;font-size:.92rem}
+  .pill i{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(79,195,247,.2)}
+  .mbar{display:none}
+  @media (max-width:720px){
+    .pill{display:none}
+    .mbar{display:block;position:fixed;inset:auto 0 0 0;z-index:19;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(10,19,36,.92);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+    .mbar a{display:block;text-align:center;padding:13px;border-radius:12px;background:var(--accent);color:#06202c;font-weight:800;text-decoration:none}
+    .ft div{grid-template-columns:2em 1fr;row-gap:2px}
+    .ft .arr{display:none!important}
+    .ft .to{grid-column:2}
+    .car-nav button{display:none}
+  }
 </style>
 </head>
 <body>
@@ -148,48 +226,72 @@
     <div class="person" role="img" aria-label="Mohamed Abu Al-Ola — محمد أبو العُلا"></div>
     <div class="wrap">
       <div class="text">
-        <h1><span lang="ar">عيشها صح</span><span lang="en">Eishha <span style="color:var(--accent)">Sah</span></span></h1>
-        <p class="slogan"><span lang="ar">إيمانٌ قويّ + جسمٌ قويّ</span><span lang="en">Strong faith + strong body</span></p>
-        <p class="lead"><span lang="ar">القرآن والسنّة… أسلوب حياة</span><span lang="en">The Quran and the Sunnah… a way of life</span></p>
-        <p class="eyebrow"><span lang="ar">محمد أبو العُلا · لايف كوتش</span><span lang="en">Mohamed Abu Al-Ola · Life Coach</span></p>
-        <div class="btns">
+        <p class="kicker reveal d1"><span lang="ar">منذ نوفمبر ٢٠٢٦ · حلقةٌ كل يوم</span><span lang="en">Since November 2026 · a new episode daily</span></p>
+        <h1 class="reveal d2"><span lang="ar">عيشها صح</span><span lang="en">Eishha <span style="color:var(--accent)">Sah</span></span></h1>
+        <p class="slogan reveal d3"><span lang="ar">إيمانٌ قويّ + جسمٌ قويّ</span><span lang="en">Strong faith + strong body</span></p>
+        <p class="lead reveal d4"><span lang="ar">القرآن والسنّة… أسلوب حياة</span><span lang="en">The Quran and the Sunnah… a way of life</span></p>
+        <p class="eyebrow reveal d4"><span lang="ar">محمد أبو العُلا · لايف كوتش</span><span lang="en">Mohamed Abu Al-Ola · Life Coach</span></p>
+        <div class="btns reveal d5">
           <a class="btn primary" href="https://www.youtube.com/@Eishhasah0"><span lang="ar">شاهد الحلقات</span><span lang="en">Watch the episodes</span></a>
           <a class="btn ghost" href="#contact"><span lang="ar">تواصل معي</span><span lang="en">Get in touch</span></a>
         </div>
+        <div class="feat reveal d5"><span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg><span lang="ar">حلقةٌ يوميًا</span><span lang="en">Daily episode</span></span><span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5"/></svg><span lang="ar">حديثٌ موثّق</span><span lang="en">Verified hadith</span></span><span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span lang="ar">خطوةٌ عملية</span><span lang="en">Practical step</span></span></div>
       </div>
     </div>
   </div>
 
+
+  <section id="numbers">
+    <div class="wrap">
+      <p class="kicker"><span lang="ar">القناة بالأرقام</span><span lang="en">The channel in numbers</span></p>
+      <div class="stats">
+        <div class="stat"><b data-count="episodes">0</b><span><span lang="ar">حلقة حتى اليوم</span><span lang="en">episodes so far</span></span></div>
+        <div class="stat"><b data-count="15000" data-plus="1" id="views">0</b><span><span lang="ar">مشاهدة</span><span lang="en">views</span></span></div>
+        <div class="stat"><b data-count="4">0</b><span><span lang="ar">منصات</span><span lang="en">platforms</span></span></div>
+        <div class="stat"><b>8:00</b><span><span lang="ar">مساءً بتوقيت القاهرة، يوميًا</span><span lang="en">PM Cairo time, daily</span></span></div>
+      </div>
+    </div>
+  </section>
+
   <section id="about">
     <div class="wrap">
       <h2><span lang="ar">نبذة</span><span lang="en">About</span></h2>
-      <p class="sub">
+      <p class="sub" style="margin-bottom:0">
         <span lang="ar">«عيشها صح» مشروعٌ يقدّمه محمد أبو العُلا، يجمع بين الإيمان والعمل: أن تفهم ما قاله الله ورسوله ﷺ، ثم تحوّله إلى عادةٍ في بيتك وعملك وصحتك وعلاقاتك. لا مواعظ طويلة، بل فكرةٌ واضحة في أقل من دقيقة، وخطوةٌ عملية تطبّقها في يومك.</span>
         <span lang="en">“Live It Right” (Eishha Sah) is a project by Mohamed Abu Al-Ola that brings faith and action together: understand what Allah and His Messenger ﷺ said, then turn it into a habit at home, at work, in your health and in your relationships. No long lectures — one clear idea in under a minute, and one practical step for your day.</span>
       </p>
-      <div class="grid">
-        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5"/><path d="M8 7h7M8 11h5"/></svg></span>
-          <h3><span lang="ar">مرجعيةٌ موثّقة</span><span lang="en">Verified sources</span></h3>
-          <p><span lang="ar">كل حلقة مبنيّة على آيةٍ أو حديثٍ صحيح، مع ذكر المصدر.</span><span lang="en">Every episode is built on a verse or an authentic hadith, with its reference.</span></p></div>
-        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></span>
-          <h3><span lang="ar">أقل من دقيقة</span><span lang="en">Under a minute</span></h3>
-          <p><span lang="ar">فكرةٌ واحدة مركّزة تناسب يومك المزدحم.</span><span lang="en">One focused idea that fits a busy day.</span></p></div>
-        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></span>
-          <h3><span lang="ar">خطوةٌ عملية</span><span lang="en">One practical step</span></h3>
-          <p><span lang="ar">تنتهي كل حلقة بشيءٍ تفعله اليوم، لا غدًا.</span><span lang="en">Each episode ends with something to do today, not tomorrow.</span></p></div>
-      </div>
+      
     </div>
   </section>
 
   <section id="topics" class="alt">
     <div class="wrap">
-      <h2><span lang="ar">المحاور</span><span lang="en">Topics</span></h2>
-      <p class="sub"><span lang="ar">موضوعاتٌ من صميم الحياة اليومية، نتناولها بنور القرآن والسنّة.</span><span lang="en">Everyday life, seen in the light of the Quran and the Sunnah.</span></p>
-      <div class="grid">
-        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><h3><span lang="ar">الإيمان والثقة بالله</span><span lang="en">Faith & trust in Allah</span></h3><p><span lang="ar">حسن الظن، والتوكّل، والرضا بالقضاء والقدر.</span><span lang="en">Good opinion of Allah, reliance on Him, and contentment with His decree.</span></p></div>
-        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 12h12"/></svg></span><h3><span lang="ar">الانضباط والعادات</span><span lang="en">Discipline & habits</span></h3><p><span lang="ar">الاستمرار، ومقاومة التسويف، وبناء النفس والجسد؛ فالمؤمن القوي خيرٌ وأحبّ إلى الله.</span><span lang="en">Consistency, beating procrastination, and building body and soul — the strong believer is better and more beloved to Allah.</span></p></div>
-        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0M13.5 20a4 4 0 0 1 8 0"/></svg></span><h3><span lang="ar">الأسرة والعلاقات</span><span lang="en">Family & relationships</span></h3><p><span lang="ar">برّ الوالدين، وتربية الأبناء، والكلمة الطيبة.</span><span lang="en">Honouring parents, raising children, and the good word.</span></p></div>
-        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19 13 11"/></svg></span><h3><span lang="ar">القناعة وسلامة القلب</span><span lang="en">Contentment & a clean heart</span></h3><p><span lang="ar">التحرّر من المقارنة والحسد، والعطاء بيقين.</span><span lang="en">Freedom from comparison and envy, and giving with certainty.</span></p></div>
+      <p class="kicker"><span lang="ar">المحاور</span><span lang="en">Topics</span></p>
+      <h2><span lang="ar">أربعة محاور… منهجٌ واحد</span><span lang="en">Four themes. One way of life.</span></h2>
+      <p class="sub"><span lang="ar">موضوعاتٌ من صميم الحياة اليومية، نتناولها بنور القرآن والسنّة. اضغط على المحور لترى حلقاته.</span><span lang="en">Everyday life, seen in the light of the Quran and the Sunnah. Open a theme to see its episodes.</span></p>
+      <div class="acc">
+        <details open><summary><span class="no"><span lang="ar">٠١</span><span lang="en">01</span></span><span class="tt"><span lang="ar">الإيمان والثقة بالله</span><span lang="en">Faith & trust in Allah</span></span><span class="pm" aria-hidden="true"></span></summary>
+          <div class="body"><p><span lang="ar">حسن الظن، والتوكّل، والرضا بالقضاء والقدر.</span><span lang="en">Good opinion of Allah, reliance on Him, and contentment with His decree.</span></p><div class="chips"><a class="chip" data-from="2026-11-17T18:00:00Z" href="https://www.youtube.com/shorts/5hbil0MABcs"><span lang="ar">«حسن الظن بالله»</span><span lang="en">Thinking well of Allah</span></a><a class="chip" data-from="2026-11-15T18:00:00Z" href="https://www.youtube.com/shorts/HUxpCwfje-E"><span lang="ar">«اعقلها وتوكّل»</span><span lang="en">Tie your camel</span></a><a class="chip" data-from="2026-11-22T18:00:00Z" href="https://www.youtube.com/shorts/wPoNkN6GmjQ"><span lang="ar">«إنت غلبان قوي»</span><span lang="en">You are in need of Allah</span></a><a class="chip" data-from="2026-11-25T18:00:00Z" href="https://www.youtube.com/shorts/kueF5QbTlgE"><span lang="ar">«هيقطع عيشي»</span><span lang="en">Fear for your livelihood</span></a><a class="chip" data-from="2026-11-26T18:00:00Z" href="https://www.youtube.com/shorts/NG5LE73HJe8"><span lang="ar">«اللي أذاك فادك»</span><span lang="en">What hurt you, helped you</span></a></div></div></details>
+        <details><summary><span class="no"><span lang="ar">٠٢</span><span lang="en">02</span></span><span class="tt"><span lang="ar">الانضباط والعادات</span><span lang="en">Discipline & habits</span></span><span class="pm" aria-hidden="true"></span></summary>
+          <div class="body"><p><span lang="ar">الاستمرار، ومقاومة التسويف، وبناء النفس والجسد؛ فالمؤمن القوي خيرٌ وأحبّ إلى الله.</span><span lang="en">Consistency, beating procrastination, and building body and soul — the strong believer is better and more beloved to Allah.</span></p><div class="chips"><a class="chip" data-from="2026-11-11T18:00:00Z" href="https://www.youtube.com/shorts/YMpZa1XhuXw"><span lang="ar">«المؤمن القوي»</span><span lang="en">The strong believer</span></a><a class="chip" data-from="2026-11-12T18:00:00Z" href="https://www.youtube.com/shorts/IzCHHedoHec"><span lang="ar">«بكرة هبدأ»</span><span lang="en">I’ll start tomorrow</span></a><a class="chip" data-from="2026-11-16T18:00:00Z" href="https://www.youtube.com/shorts/L5DLWcab3WE"><span lang="ar">«هكمّل»</span><span lang="en">I’ll keep going</span></a><a class="chip" data-from="2026-11-08T18:00:00Z" href="https://www.youtube.com/shorts/fKTfWa_mME8"><span lang="ar">«لو ما بتصليش»</span><span lang="en">If you don’t pray</span></a></div></div></details>
+        <details><summary><span class="no"><span lang="ar">٠٣</span><span lang="en">03</span></span><span class="tt"><span lang="ar">الأسرة والعلاقات</span><span lang="en">Family & relationships</span></span><span class="pm" aria-hidden="true"></span></summary>
+          <div class="body"><p><span lang="ar">برّ الوالدين، وتربية الأبناء، والكلمة الطيبة، والثقة بالناس.</span><span lang="en">Honouring parents, raising children, the good word, and trusting people.</span></p><div class="chips"><a class="chip" data-from="2026-12-02T18:00:00Z" href="https://www.youtube.com/shorts/ciwQBsW4pmc"><span lang="ar">«قلتها إمتى؟»</span><span lang="en">When did you last say it?</span></a><a class="chip" data-from="2026-11-30T18:00:00Z" href="https://www.youtube.com/shorts/R59fZdrc3ho"><span lang="ar">«شنطة الرحلة»</span><span lang="en">The travel bag</span></a><a class="chip" data-from="2026-11-24T18:00:00Z" href="https://www.youtube.com/shorts/OTZcRQHj4Iw"><span lang="ar">«قالها هزار»</span><span lang="en">Just a joke</span></a><a class="chip" data-from="2026-12-06T18:00:00Z" href="https://www.youtube.com/shorts/KIOovj0gm7I"><span lang="ar">«مش كل كلام يترد عليه»</span><span lang="en">Not every word deserves a reply</span></a><a class="chip" data-from="2026-12-07T18:00:00Z" href="https://www.youtube.com/shorts/HL_rrYzPeHM"><span lang="ar">«مبقتش بثق في حد»</span><span lang="en">I don’t trust anyone anymore</span></a></div></div></details>
+        <details><summary><span class="no"><span lang="ar">٠٤</span><span lang="en">04</span></span><span class="tt"><span lang="ar">القناعة وسلامة القلب</span><span lang="en">Contentment & a clean heart</span></span><span class="pm" aria-hidden="true"></span></summary>
+          <div class="body"><p><span lang="ar">التحرّر من المقارنة والحسد، والعطاء بيقين.</span><span lang="en">Freedom from comparison and envy, and giving with certainty.</span></p><div class="chips"><a class="chip" data-from="2026-11-10T18:00:00Z" href="https://www.youtube.com/shorts/NbQg6i6ot6s"><span lang="ar">«الحسد»</span><span lang="en">Envy</span></a><a class="chip" data-from="2026-11-29T18:00:00Z" href="https://www.youtube.com/shorts/KkJi6YlXPhc"><span lang="ar">«عينك»</span><span lang="en">Your eye</span></a><a class="chip" data-from="2026-11-19T18:00:00Z" href="https://www.youtube.com/shorts/7PAq_Vr6Osc"><span lang="ar">«الزهد»</span><span lang="en">Detachment</span></a><a class="chip" data-from="2026-11-20T18:00:00Z" href="https://www.youtube.com/shorts/luHgm4wiDhI"><span lang="ar">«اللي في إيدك»</span><span lang="en">What’s in your hand</span></a><a class="chip" data-from="2026-12-04T18:00:00Z" href="https://www.youtube.com/shorts/Twf05j4WJAA"><span lang="ar">«ارميه البحر»</span><span lang="en">Throw it in the sea</span></a></div></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="change">
+    <div class="wrap">
+      <p class="kicker"><span lang="ar">التحوّل</span><span lang="en">The shift</span></p>
+      <h2><span lang="ar">من… إلى…</span><span lang="en">From… to…</span></h2>
+      <p class="sub"><span lang="ar">كل حلقة خطوةٌ صغيرة تنقلك من عادةٍ تُتعبك إلى أخرى تُريحك.</span><span lang="en">Each episode is a small step from a habit that drains you to one that settles you.</span></p>
+      <div class="ft">
+        <div><span class="no">01</span><span class="from"><span lang="ar">من التسويف</span><span lang="en">From procrastination</span></span><span class="arr">→</span><span class="to"><span lang="ar">إلى الاستمرار</span><span lang="en">to consistency</span></span></div>
+        <div><span class="no">02</span><span class="from"><span lang="ar">من المقارنة</span><span lang="en">From comparison</span></span><span class="arr">→</span><span class="to"><span lang="ar">إلى الرضا</span><span lang="en">to contentment</span></span></div>
+        <div><span class="no">03</span><span class="from"><span lang="ar">من القلق</span><span lang="en">From worry</span></span><span class="arr">→</span><span class="to"><span lang="ar">إلى التوكّل</span><span lang="en">to trust in Allah</span></span></div>
+        <div><span class="no">04</span><span class="from"><span lang="ar">من الكلام</span><span lang="en">From talking</span></span><span class="arr">→</span><span class="to"><span lang="ar">إلى الفعل</span><span lang="en">to doing</span></span></div>
       </div>
     </div>
   </section>
@@ -198,22 +300,25 @@
     <div class="wrap">
       <h2><span lang="ar">الحلقات الأكثر مشاهدة</span><span lang="en">Most-watched episodes</span></h2>
       <p class="sub"><span lang="ar">ابدأ من هنا: الحلقات التي لاقت أكبر تفاعل.</span><span lang="en">Start here: the episodes viewers engaged with most.</span></p>
-      <div class="eps">
+      <div class="eps" id="eps">
         <a class="ep" href="https://www.youtube.com/shorts/5hbil0MABcs"><img src="ep/ep10.jpg" alt="" loading="lazy"><div><h3><span lang="ar">حسن الظن بالله</span><span lang="en">Thinking well of Allah</span></h3><p><span lang="ar">هل الرزق بالشطارة وحدها؟</span><span lang="en">Is provision only about being clever?</span></p></div></a>
         <a class="ep" href="https://www.youtube.com/shorts/NbQg6i6ot6s"><img src="ep/ep03.jpg" alt="" loading="lazy"><div><h3><span lang="ar">الحسد</span><span lang="en">Envy</span></h3><p><span lang="ar">لا تعِش خائفًا من أعين الناس.</span><span lang="en">Don’t live in fear of people’s eyes.</span></p></div></a>
         <a class="ep" href="https://www.youtube.com/shorts/wPoNkN6GmjQ"><img src="ep/ep15.jpg" alt="" loading="lazy"><div><h3><span lang="ar">أنت فقيرٌ إلى الله</span><span lang="en">You are in need of Allah</span></h3><p><span lang="ar">نجاحك توفيقٌ من الله، لا شطارتك وحدها.</span><span lang="en">Your success is Allah’s help, not your cleverness alone.</span></p></div></a>
         <a class="ep" href="https://www.youtube.com/shorts/YMpZa1XhuXw"><img src="ep/ep04.jpg" alt="" loading="lazy"><div><h3><span lang="ar">المؤمن القوي</span><span lang="en">The strong believer</span></h3><p><span lang="ar">صلاةٌ وصيام… وجسدٌ يُعينك عليهما.</span><span lang="en">Prayer and fasting — and a body that helps you keep them.</span></p></div></a>
       </div>
+      <div class="car-nav"><div class="track"><i id="carBar"></i></div><button type="button" id="carPrev" aria-label="Previous">‹</button><button type="button" id="carNext" aria-label="Next">›</button></div>
     </div>
   </section>
 
-  <section id="how">
+  <section id="journey" class="alt">
     <div class="wrap">
-      <h2><span lang="ar">كيف تستفيد؟</span><span lang="en">How it works</span></h2>
-      <div class="steps">
-        <div class="card"><h3><span lang="ar">حلقةٌ جديدة كل يوم</span><span lang="en">A new episode every day</span></h3><p><span lang="ar">الساعة الثامنة مساءً بتوقيت القاهرة، على جميع المنصات.</span><span lang="en">At 8:00 PM Cairo time, on every platform.</span></p></div>
-        <div class="card"><h3><span lang="ar">طبّق الخطوة</span><span lang="en">Take the step</span></h3><p><span lang="ar">نفّذ الخطوة العملية في يومك، ولو كانت صغيرة.</span><span lang="en">Do the practical step in your day, however small.</span></p></div>
-        <div class="card"><h3><span lang="ar">الخلاصة الأسبوعية</span><span lang="en">The weekly recap</span></h3><p><span lang="ar">كل سبعة أيام حلقةٌ تجمع دروس الأسبوع الستة.</span><span lang="en">Every seventh day, one episode brings the week’s six lessons together.</span></p></div>
+      <p class="kicker"><span lang="ar">الرحلة</span><span lang="en">The journey</span></p>
+      <h2><span lang="ar">خطوةٌ خطوة</span><span lang="en">Step by step</span></h2>
+      <div class="tl">
+        <div><time>2026-11-08</time><h3><span lang="ar">الحلقة الأولى</span><span lang="en">Episode one</span></h3><p><span lang="ar">«لو ما بتصلّيش… ما تسمعنيش»: بداية «عيشها صح» على أربع منصات.</span><span lang="en">“If you don’t pray… don’t listen to me”: Eishha Sah begins on four platforms.</span></p></div>
+        <div><time>2026-11-17</time><h3><span lang="ar">«حسن الظن بالله»</span><span lang="en">“Thinking well of Allah”</span></h3><p><span lang="ar">أكثر حلقاتنا مشاهدةً حتى الآن.</span><span lang="en">Our most-watched episode so far.</span></p></div>
+        <div><time>2026-11-22</time><h3><span lang="ar">إطلاق الموقع</span><span lang="en">Website launch</span></h3><p><span lang="ar">بيتٌ واحد يجمع الحلقات والمحاور وطرق التواصل.</span><span lang="en">One home for the episodes, the themes and how to reach us.</span></p></div>
+        <div class="now"><time><span lang="ar">الآن</span><span lang="en">Now</span></time><h3><span lang="ar">حلقةٌ كل يوم</span><span lang="en">An episode every day</span></h3><p><span lang="ar">والرحلة مستمرة… الساعة الثامنة مساءً بتوقيت القاهرة.</span><span lang="en">And the journey goes on… at 8:00 PM Cairo time.</span></p></div>
       </div>
     </div>
   </section>
@@ -260,6 +365,7 @@
   </div>
 </footer>
 
+<a class="pill" href="#contact"><i></i><span lang="ar">تواصل معي</span><span lang="en">Get in touch</span></a>
 <a class="fab" href="https://wa.me/971566422500" aria-label="WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.5.7 4.8 2 6.8L3 29l6.8-2.2c1.9 1 4 1.6 6.2 1.6 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23c-2 0-3.9-.6-5.5-1.6l-.4-.2-4 1.3 1.3-3.9-.3-.4c-1.1-1.7-1.7-3.6-1.7-5.6C5.4 9.8 10.2 5.2 16 5.2s10.6 4.6 10.6 10.4S21.8 26 16 26zm5.8-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.7-.5z"/></svg></a>
 
 <script type="application/ld+json">
@@ -274,6 +380,22 @@
     var q=new URLSearchParams(location.search).get('lang');
     set(q==='en'||q==='ar'?q:(saved||'ar'));
     btn.addEventListener('click',function(){set(root.lang==='ar'?'en':'ar')});
+  })();
+
+  (function(){
+    var start=new Date('2026-11-08T18:00:00Z'), eps=Math.max(1,Math.floor((Date.now()-start)/864e5)+1);
+    document.querySelectorAll('a.chip[data-from]').forEach(function(a){if(Date.now()<Date.parse(a.getAttribute('data-from'))){a.removeAttribute('href');a.classList.add('soon')}});
+    var els=document.querySelectorAll('[data-count]');
+    function run(el){var t=el.getAttribute('data-count')==='episodes'?eps:+el.getAttribute('data-count'),p=el.hasAttribute('data-plus')?'+':'',t0=null;
+      function f(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1400),v=Math.round(t*(1-Math.pow(1-k,3)));el.textContent=p+v.toLocaleString('en-US');if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+    var go=function(){if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run(e.target);io.unobserve(e.target)}})},{threshold:.4});els.forEach(function(e){io.observe(e)})}else els.forEach(run)};
+    var vEl=document.getElementById('views');
+    fetch('stats.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(j&&j.views>0&&vEl)vEl.setAttribute('data-count',j.views)}).catch(function(){}).then(go);
+    var c=document.getElementById('eps'),bar=document.getElementById('carBar');
+    if(c){var step=function(d){var w=c.querySelector('.ep').offsetWidth+16;var rtl=getComputedStyle(c).direction==='rtl';c.scrollBy({left:(rtl?-d:d)*w,behavior:'smooth'})};
+      document.getElementById('carNext').addEventListener('click',function(){step(1)});document.getElementById('carPrev').addEventListener('click',function(){step(-1)});
+      var upd=function(){var max=c.scrollWidth-c.clientWidth,pos=Math.abs(c.scrollLeft),r=c.clientWidth/c.scrollWidth;bar.style.width=(r*100)+'%';bar.style.transform='translateX('+((getComputedStyle(c).direction==='rtl'?-1:1)*(max>0?pos/max:0)*(1/r-1)*100)+'%)'};
+      c.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd()}
   })();
 </script>
 <script data-goatcounter="https://eishhasah.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
