@@ -161,7 +161,8 @@
   .chips a.chip[href]:hover{border-color:var(--accent);color:var(--accent)}
   .chips a.chip[href]::after{content:" ↗";color:var(--accent);font-size:.8em}
   .chips a.chip.soon{opacity:.55;cursor:default}
-  .chips a.chip.soon::after{content:""}
+  .chips a.chip.soon::after{content:" · قريبًا";font-size:.8em;color:var(--muted)}
+  html[lang=en] .chips a.chip.soon::after{content:" · soon"}
   /* from -> to */
   .ft{display:grid;gap:0;border-top:1px solid var(--line)}
   .ft div{display:grid;grid-template-columns:2.4em 1fr auto 1fr;align-items:center;gap:14px;padding:18px 4px;border-bottom:1px solid var(--line)}
